@@ -15,7 +15,7 @@ st.header('This application can guide you to keep yourself healthy. You can ask 
 # Create side bar to calculate BMI
 st.sidebar.header('CALCULATE YOUR BMI')
 height = weight = bmi = age = gender =  None
-gender = st.sidebar.selectbox('Male', 'Female')
+gender = st.sidebar.selectbox('Select your Gender',['Male', 'Female'])
 age = st.sidebar.text_input('Enter your age: ')
 height = st.sidebar.text_input('Enter your height in meters: ')
 weight = st.sidebar.text_input('Enter your weight in Kgs: ')
