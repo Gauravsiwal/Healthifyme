@@ -14,7 +14,9 @@ st.header('This application can guide you to keep yourself healthy. You can ask 
 
 # Create side bar to calculate BMI
 st.sidebar.header('CALCULATE YOUR BMI')
-height = weight = bmi = None
+height = weight = bmi = age = gender =  None
+gender = st.sidebar.selectbox('Male', 'Female')
+age = st.sidebar.text_input('Enter your age: ')
 height = st.sidebar.text_input('Enter your height in meters: ')
 weight = st.sidebar.text_input('Enter your weight in Kgs: ')
 bmi = pd.to_numeric(weight)/pd.to_numeric(height)**2
@@ -24,9 +26,9 @@ st.sidebar.text(f'Your BMI: {round(bmi,2)} Kg/m^2')
 user_input= st.text_input('Ask your question here: ')
 prompt = f'''Consider yourself as a health expert. You need to answer the question
 asked by the user and guide him in order to imrpove his/her health. User has provided
-the basic information like height is {height} meters, weight is {weight} kgs and BMI is
-{bmi}. Use this information to give the cutomized solution (incase this data is none then ignore 
-it). You result should be deivided in proper sections like problem, possible reason,
+the basic information like gender is {gender}, age is {age} height is {height} meters, weight is 
+{weight} kgs and BMI is {bmi}. Use this information to give the cutomized solution (incase this data is none 
+then ignore it). You result should be deivided in proper sections like problem, possible reason,
 and solutions. Keep result summarized and in bulet points. Here is the question from user: {user_input}'''
 
 if user_input:
